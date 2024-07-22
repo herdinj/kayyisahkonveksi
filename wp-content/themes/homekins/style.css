@@ -1,0 +1,829 @@
+/*
+Theme Name: Homekins
+Theme URI: http://shtheme.com/demosd/homekins
+Author: Shtheme
+Author URI: https://themeforest.net/user/shtheme
+Description: In 2021, our default theme lets you create a responsive business website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a business website with WordPress has never been easier.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: homekins
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* ========TABLE OF CONTENTS==========
+00. Body, links, hgroup, paragraphs, general styles
+01. Fixed header & Navigation
+02. Section Intro (Home)
+03. Section About
+04. Section Resume
+05. Section Portfolio
+06. Section Blog
+07. Section Contact
+08. Footer
+09. Loader
+10. Responsive design
+
+/*--------------------------------------------------
+    00. Body, links, hgroup, paragraphs, general styles
+---------------------------------------------------*/
+.navbar-default-white.navbar-fixed-top {
+    margin: 0px auto !important;
+}
+.tagcloud ul.wp-tag-cloud {
+    padding-inline-start: 0px;
+}
+.tagcloud .wp-tag-cloud li {
+    margin: 5px 5px 15px 0;
+    display: inline-block;
+}
+.tagcloud .wp-tag-cloud li a {
+    font-size: 13px !important;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 5px 10px;
+    text-align: center;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.tagcloud .wp-tag-cloud li a:hover {
+    color: #111;
+    border: 1px solid #fead15;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.comment-form-cookies-consent {
+    display: none;
+}
+#commentform textarea {
+    color: #111;
+}
+.comment-info {
+    padding-top: 0px;
+}
+.blog-simple ul.pagination li span.page-numbers.current {
+    font-size: 9.5pt;
+    background: none;
+    padding: .72rem 1.1rem;
+    color: #292929;
+    background: #fead15;
+    border: 1px solid rgba(0,0,0,.1);
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+section.elementor-section {
+    padding: 0px 0 0px 0;
+}
+.pagination.justify-content-center li a.page-numbers {
+    color: #111;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.1);
+    cursor: pointer;
+    padding: 0.7rem 1.15rem;
+    transition: all 0.3s ease;
+}
+.pagination.justify-content-center li .page-numbers.current{
+    color: #fff;
+    background: #111;
+    border: 1px solid rgba(0,0,0,.1);
+    cursor: pointer;
+    padding: 0.7rem 1.15rem;
+    transition: all 0.3s ease;
+}
+.pagination.justify-content-center li a.page-numbers:hover {
+    color: #fff;
+    background: #111;
+    transition: all 0.3s ease;
+}
+.pagination.justify-content-center {
+    padding-bottom: 0px !important;
+}
+#detailproject .elementor-text-editor .col-md-8 {
+    display: inline-block;
+    float: left;
+}
+#detailproject .elementor-text-editor .col-md-4 {
+    display: inline-block;
+}
+#detailproject .elementor {
+    max-width: 100%;
+}
+.breadcrumb-area.d-flex.align-items-center {
+    height: 850px;
+}
+.breadcrumb-area.d-flex.align-items-center .error-number {
+    font-size: 150px;
+    font-weight: 700;
+    margin-top: -20px;
+}
+.breadcrumb-area.d-flex.align-items-center .error-number +h4 +p {
+    margin-bottom: 70px;
+}
+.breadcrumb-area.d-flex.align-items-center a.main_btn {
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.breadcrumb-area.d-flex.align-items-center a.main_btn:hover {
+    border: 1px solid #fead15;
+}
+footer a{
+    color: #fff;
+}
+footer a:hover{
+    color: #fff;
+    opacity: .6;
+    transition: all 0.3s ease;
+}
+.user-name::after, .user-email::after, .user-phone::after, .user-url::after, .user-message::after {
+    top: 16px;
+}
+#owl-expertnesses a {
+    color: #fff;
+}
+#owl-expertnesses a:hover {
+    color: #fff;
+}
+.name a{
+    color: #fff;
+}
+.name a:hover{
+    color: #fff;
+}
+.comment-respond {
+    background: #fafafa;
+}
+#commentform textarea {
+    background: #fff;
+}
+#commentform textarea:focus {
+    color: #111;
+    background: #fff;
+}
+.widget  h4 {
+    font-size: 21px;
+}
+#blog-comment h5 {
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+    font-weight: 700;
+    line-height: 1.3333;
+    letter-spacing: 0;
+    font-size: 26px;
+}
+.comment-reply-title {
+    font-weight: 700;
+    line-height: 1.3333;
+    letter-spacing: 0;
+    font-size: 26px;
+	margin-bottom: 20px;
+}
+#blog-comment > ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 90px;
+}
+.comment-info .c-reply a::before {
+    display: none;
+}
+.comment-info .c-date i {
+    padding-right: 5px;
+}
+.comment-info .c-date {
+    text-transform: capitalize;
+    font-weight: 600;
+    display: block;
+    font-size: 12px;
+    float: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.comment-info .c-reply a {
+    display: inline-block;
+    margin-top: 5px;
+    background: #fead15;
+    padding: 5px 20px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 35px;
+    border: 1px solid #fead15;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+.comment-info .c-reply a:hover {
+    color: #fff;
+    background: #999;
+    border: 1px solid #999;
+}
+@media screen and (min-width: 991px) {
+#blog-comment ul li.comment_list_1 .comment-info {
+    position: relative;
+}
+#blog-comment ul li.comment_list_1 .comment-info .c-reply {
+    top: -10px;
+    position: absolute;
+    right: 0px;
+}
+#blog-comment > ul {
+    position: relative;
+}
+#blog-comment > ul li .comment-info .c-reply {
+    top: -13px;
+    position: absolute;
+    right: 0px;
+}
+}
+
+.comment-respond .comment-form-comment >label{
+    font-weight: 600;
+}
+
+.comment-respond .comment-form-author >label{
+    font-weight: 600;
+}
+.comment-respond .comment-form-email >label{
+    font-weight: 600;
+}
+#commentform input {
+    background: #fff;
+    color: #111;
+}
+#commentform input:focus {
+    background: #fff;
+    color: #111;
+}
+@media (max-width: 991px){
+    #blog-comment ul.children {
+        margin-left: 0px;
+        padding-left: 20px;
+    }
+    #blog-comment ul.children > ul {
+        list-style: none;
+        padding-left: 20px;
+    }
+    #blog-comment li .avatar {
+        position: inherit;
+        margin-bottom: 10px;
+    }
+    .comment-info {
+        position: relative;
+        margin-left: 0px;
+    }
+    .comment-info {
+        padding: 0px 0px;
+    }
+}
+#owl-expertnesses.slick .item .desc {
+    bottom: 50px;
+}
+#owl-expertnesses.slick .item:hover .desc {
+    bottom: 20px;
+}
+.slickteam.slick .item {
+    cursor: auto;
+}
+.blog-text h2 {
+    font-size: 1.6rem;
+}
+#form-contact1 .form-control {
+    color: #111;
+}
+footer .m-2-hor div:first-child .textwidget .footer-col {
+	padding-left: 0px;
+}
+.blog-simple .blog-text span.user-post {
+    text-transform: capitalize;
+}
+.widget .recent div p {
+    color: #111;
+    font-size: 14px;
+}
+#detailproject .share .content {
+    color: #111;
+}
+.tags a.content {
+    color: #111;
+}
+.blog-simple .blog-text span.user-post i {
+    font-weight: 600;
+}
+.blog-simple .blog-text span.user-post {
+    font-weight: 600;
+}
+.blog-simple .blog-text span.date-post {
+    font-weight: 600;
+}
+.blog-simple .blog-text span.date-post i {
+    font-weight: 600;
+}
+.blog-simple .blog-text span.comment a i {
+    font-weight: 600;
+}
+.blog-simple .blog-text span.comment {
+    font-weight: 600;
+}
+aside .widget  .recent div {
+	border-bottom: 1px solid #f3eded;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+aside .widget  .recent div:last-child {
+	border-bottom: 0px solid #f3eded;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.navbar-brand.white img {
+    max-width: 156px;
+}
+.comment-form >div.comment-form-comment {
+    margin-bottom: 1rem;
+}
+.comment-form >div.comment-form-author {
+    margin-bottom: 1rem;
+}
+.comment-form >div.comment-form-email {
+    margin-bottom: 1rem;
+}
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: unset!important;
+}
+
+.elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated {
+    padding: 0px!important;
+}
+
+/*** CUSTOM WP ***/
+#owl-expertnesses.slick .item:hover .desc{
+	padding-right: 20px;
+}
+.slickproject .item:hover .desc{
+	bottom: 60px;
+}
+.slickproject .item:hover .icon{
+	bottom: 45px;
+}
+.slickteam .item:hover .desc{
+	bottom: 25px;
+}
+#listcomplish .listcomplish:first-child .year::before {
+    content: 'In Year';
+    display: block;
+	padding-bottom: 15px;
+	font-size: 1.5rem;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 50px;
+}
+#listcomplish .listcomplish:first-child .content::before {
+    content: 'Projects Name';
+    display: block;
+	padding-bottom: 25px;
+	font-size: 1.5rem;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 50px;
+}
+#listcomplish .listcomplish .detail{
+	text-align: left;
+}
+#listcomplish .listcomplish:first-child .detail::before {
+    content: 'Category';
+    display: block;
+	font-weight:600;
+	padding-bottom: 15px;
+	font-size: 1.5rem;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 50px;
+}
+section{
+	padding: 90px 0 90px 0;
+}
+.heading {
+	position:relative;
+	top: -5px;
+	margin-bottom: 2.5rem;
+	line-height: 1;
+}
+#detailproject #listcomplish {
+    padding-top: 0px;
+	padding-bottom: 0px;
+}
+.tags .heading, .share .heading  {
+	top: 0px;
+}
+.footer-col .heading{
+	font-weight: 600;
+}
+.footer-col .heading h2{
+	position: relative;
+	top: -7px;
+}
+.col-12.mb-5 {
+    margin-bottom: 0 !important;
+}
+.col-12.my-5 {
+    margin-bottom: 0px !important;
+}
+.fadeInLeft, .fadeInRight, .fadeInUp{
+	animation-name: unset !important;
+}
+.onStep {
+    opacity: 1;
+}
+.sing_team1 .subheading {
+    font-size: 1.1em;
+    max-width: 80vw;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: -1.2rem;
+    margin-bottom: 1.5rem;
+}
+.teamicon{
+display: block;
+padding-top: 1rem;
+}
+.teamicon a{
+display: inline-block;
+border: 1px solid rgba(0,0,0,.1);
+position: relative;
+overflow: hidden;
+border-radius: 4px;
+padding: 10px 15px;
+margin-right: 10px;
+}
+.teamicon a:hover{
+background: #ffb41d;
+transition: all 0.3s ease;
+}
+.teamicon a:hover::before{
+top: 0;
+left: 0;
+opacity: 1;
+transition: all 0.3s ease;
+}
+.teamicon a:hover .shine{
+z-index: 1;
+-webkit-animation: sheen 2s alternate;
+animation: sheen 2s alternate;
+} 
+#preloader{
+	display: block;
+}
+.slick .item .desc{
+	left:0px;
+	padding:2rem;
+}
+.slickteam .item .desc, .slickteam .item:hover .desc{
+	 bottom: 0px;
+}
+#owl-expertnesses.slick .item .desc{
+	bottom: 0px;
+}
+#owl-expertnesses.slick .item:hover .desc{
+	bottom: 0px;
+	padding-right:2rem;
+}
+.slicknews .item .desc{
+	left:0px;
+	padding:2rem;
+	bottom: 55px;
+}
+.slicknews .item .desc .name{
+	line-height: 1.3;
+}
+.slicknews .item .icon{
+	left:0px;
+	padding:2rem;
+	bottom: 20px;
+}
+.slickproject .item .desc{
+	left:0px;
+	padding:2rem;
+	bottom: 0px;
+}
+.slickproject .item .icon{
+	left:0px;
+	padding:2rem;
+	bottom: 5px;
+}
+.slickproject .item:hover .desc{
+	bottom: 40px;
+}
+.slickproject .item:hover .icon{
+	bottom: 30px;
+}
+.col-home .thumb.team{
+	width: 100%;
+}
+.col-home .thumb.team img{
+	width: 100%;
+}
+.col-home .thumb::before{
+	bottom: -7%;
+}
+/* singteam */
+.col-home .thumb.team{
+    width: 100%;
+}
+.sing_team1 .heading{
+	margin-top: 30px;
+	margin-bottom: 2rem;
+}
+.sing_team1 .subheading {
+    font-size: 1.1em;
+    max-width: 80vw;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: -1.2rem;
+    margin-bottom: 1rem;
+    opacity: .8;
+}
+.sing_team1 .teamicon {
+    display: block;
+    padding-top: 1rem;
+}
+.sing_team1 .teamicon a{
+display: inline-block;
+border: 1px solid rgba(0,0,0,.1);
+position: relative;
+overflow: hidden;
+border-radius: 4px;
+padding: 0px !important;
+margin-right: 10px;
+width: 48px;
+height: 48px;
+line-height: 48px;
+text-align: center;
+}
+.sing_team1 .teamicon a:hover{
+background: #ffb41d;
+transition: all 0.3s ease;
+}
+.sing_team1 .teamicon a:hover::before{
+top: 0;
+left: 0;
+opacity: 1;
+transition: all 0.3s ease;
+}
+.sing_team1 .teamicon a:hover .shine{
+z-index: 1;
+-webkit-animation: sheen 2s alternate;
+animation: sheen 2s alternate;
+} 
+.sing_team1 .content{
+    margin-bottom: 1rem;
+}
+.sing_team1 .detailteam{
+    display: block;
+    padding-bottom: 10px;
+}
+.detailteam .listdetail{
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px 0;
+}
+.listdetail .title{
+    font-weight: 600;
+    font-size: 1.1;
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+.listdetail .title:after{
+    content: ':';
+    padding-left: 5px;
+}
+.slickproject .item .desc .name{
+	max-width: unset;
+	padding-bottom: 0;
+}
+.slickproject .item:hover .desc .name{
+	padding-bottom:35px;
+}
+.blog-simple .blog-text p, .blog-simple blockquote{
+	margin-bottom: 45px;
+}
+.blog-simple .blog-text{
+	padding-top:20px;
+}
+.slick .item {
+    cursor: inherit;
+}
+.btn-blog {
+    margin-top: -20px;
+}
+section[aria-label="contact"] .text-side .heading {
+    line-height: 1.2;
+}
+.navbar-brand.white img{
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+}
+.slick .item .desc .content {
+    color: #fff;
+}
+.slickproject .item .icon a {
+    color: #fff;
+	font-weight: 500;
+}
+.slicknews .item .icon a {
+    color: #fff;
+	font-weight: 500;
+}
+.jumbotron.imgtop.onStep.animated.fadeInUp {
+	padding-top: 0px;
+}
+.slickproject .item .desc .tag, .slicknews .item .desc .date{
+	font-weight: 500!important;
+}
+.blog-simple ul.pagination li span.page-numbers.current, .blog-simple ul.pagination li a{
+	font-weight: 500!important;
+}
+.pagination li{
+	margin-right:10px;
+}
+/* team detail */
+.col-home .quote {
+    display: flex;
+    margin: 25px 0;
+    font-weight: 400;
+    font-style: italic;
+}
+.col-home .quote::before {
+    content: '"';
+    position: relative;
+    font-size: 12rem;
+    padding-right: 10px;
+    color: #ffb41d;
+	top: -55px;
+	height: 65px;
+	left: -20px;
+}
+.col-home .thumb.team {
+    display: flex;
+    justify-content: center;
+}
+.col-home .thumb.team::before{
+	content: unset;
+}
+.sing_team1 .heading {
+    margin-top: 30px;
+    margin-bottom: 1.5rem;
+}
+.sing_team1 .subheading{
+	margin-bottom: 25px;
+}
+.single-img img{
+	height: 630px;
+	max-height: unset;
+}
+.single-img.max-height300 {
+    max-height: 319px;
+}
+.single-img.max-height300 img{
+    height: 310px;
+	max-height: unset;
+}
+.herocaption {
+	padding: 45px 7% 20px;
+}
+#listcomplish{
+    display: none!important;
+}
+.elementor-widget-bdevs-Project.elementor-element-b1e1358{
+    margin-top: 100px;
+}
+.elementor-24 .elementor-element.elementor-element-c7480c8 {
+    margin-top: 17px!important;
+    margin-bottom: 17px!important;
+}
+.blog-simple blockquote{
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+}
+.blog-simple blockquote p{
+    margin-bottom: 25px!important;
+}
+.blog-simple blockquote small{
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #111;
+}
+.text-side .address .heading{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#detailproject .sticky .detailproject li{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.tagcloud .wp-tag-cloud li a {
+    text-transform: capitalize;
+    font-weight: 600;
+    border: 1px solid #333;
+}
+.blog-simple blockquote small{
+    clear: both;
+}
+li.cat-item a{
+    font-weight: 500;
+    text-transform: capitalize;
+}
+li.cat-item{
+    margin-bottom: 15px;
+}
+#categories-3 ul{
+    list-style: none!important;
+    padding-left: 0px;
+}
+
+#categories-3 ul li:last-child {
+    border-bottom: 0px solid #f3eded;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+#categories-3 ul li{
+    border-bottom: 1px solid #f3eded;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+li.cat-item a:hover{
+    color: #fead15;
+}
+.footer-col{
+	padding-left:0px;
+}
+.blog-simple .blog-text p, .blog-simple blockquote {
+    letter-spacing: 0.5px;
+    line-height: 28px;
+}
+.blog-simple .blog-text{
+	letter-spacing: 0.5px!important;
+    line-height: 28px!important;
+}
+@media(max-width:768px){
+	.slickproject .item .icon a{
+		display:none!important;
+	}
+	.heading{
+		line-height:45px!important;
+	}
+}
+.blog-simple blockquote{
+	   background: #f8f8f8;
+	font-weight:600;
+	color:#333;
+}
+.blog-simple blockquote small{
+	font-size:14px;
+	color: #777!important;
+	font-style:italic;
+}
+.blog-simple blockquote small:before{
+	content: '- ';
+}
+.comment-content.entry.clr p {
+    font-size: 15px;
+    margin: 15px 0;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+}
+.blog-simple blockquote p {
+    margin-bottom: 12px!important;
+}
+.comment-reply-title, #blog-comment h5{
+	font-weight: 600;
+}
+.footer-col .link-call{
+	display:none!important;
+}
+.rightmenu{
+	padding: 27px 20px;
+}
+.blog-text h2 {
+    font-size: 28px;
+}
+.blog-simple .blog-text p, .blog-simple .blog-text, .comment-content.entry.clr p{
+	font-weight:400;
+}
+.blog-simple blockquote p{
+	font-weight:600!important;
+}
+.s-input-home{
+	padding-left:5px;
+}
+.search-custom .btn-s-input{
+	top:unset;
+}
